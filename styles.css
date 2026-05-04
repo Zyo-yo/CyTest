@@ -1,0 +1,21 @@
+#password {
+    margin: auto;
+    font-size: 30px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
+#btn {
+    font-size: 30px;
+}
+#rule{
+    font-size: 2em;
+}
+#feedback{
+    font-size: 2em;
+}
+#date {
+    margin: auto;
+    font-size: 30px;
+    border-radius: 10px;
+    border: 1px solid black;
+}
