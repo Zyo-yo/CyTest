@@ -23,7 +23,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
+    background: linear-gradient(to bottom, #FFDAB9, #FFB6C1, #ADD8E6, #FFDAB9);
     color: white;
 }
 

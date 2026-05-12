@@ -220,7 +220,13 @@ h2 {
 @media (max-width: 480px) {
 
     body {
-        padding: 15px;
+    background-image: url("images/background.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background: linear-gradient(to bottom, #FFDAB9, #FFB6C1, #ADD8E6, #FFDAB9);
+    position: relative;
     }
 
     h2 {
