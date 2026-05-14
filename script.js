@@ -197,6 +197,7 @@ function test() {
         setOptionImage("option3", "images/q7-3.gif", "yer mom");
         setOptionImage("option4", "images/q7-4.webp", "yer mom");
         setOptionImage("option5", "images/q7-5.gif", "yer mom");
+        goToTop();
 
     } else if (selected && selected.value === "1") {
         document.getElementById("rule").innerHTML = "Question 8: What is the title of the song I first translated for you? 🤔";
@@ -207,6 +208,7 @@ function test() {
         displayPassword();
         clearInput();
         focusInput();
+        goToTop();
 
     } else if (password === "naiilang") {
         document.getElementById("rule").innerHTML = "Question 9: What is the name of the JellyCat dog keychain i gave you? 🤔";
@@ -229,6 +231,7 @@ function test() {
         setOptionImage("option3", "images/q10-4.jfif", "yer mom");
         setOptionImage("option4", "images/q10-5.jfif", "yer mom");
         setOptionImage("option5", "images/q10-1.jpg", "yer mom");
+        goToTop();
 
         
     } else if (selected && selected.value === "5") {
@@ -240,6 +243,7 @@ function test() {
         displayPassword();
         clearInput();
         focusInput();
+        goToTop();
 
 
     } else if (password === "dondozo") {
@@ -261,6 +265,7 @@ function test() {
     } else if (password === "oshawott") {
         document.getElementById("rule").innerHTML = "Question 14: What game did we play for the first time that we ended up staying until 4AM for? 🤔";
         document.getElementById("questionImage").src = "images/q14.gif";
+        goToTop();
         displayPassword();
         clearInput();
         focusInput();
