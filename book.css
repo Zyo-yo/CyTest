@@ -1,274 +1,242 @@
-/* ===== RETRO FONT ===== */
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
-/* ===== RESET ===== */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* ===== BODY ===== */
-html,
 body {
     width: 100%;
     min-height: 100vh;
-
-    overflow-x: hidden;
-
     font-family: 'Press Start 2P', cursive;
-
     background: linear-gradient(to bottom, #FFDAB9, #FFB6C1, #ADD8E6, #FFDAB9);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
 }
 
-/* ===== DARK OVERLAY ===== */
-body::before {
-    content: "";
-
-    position: fixed;
-    inset: 0;
-
-    background: rgba(0,0,0,0.6);
-
-    z-index: -1;
-}
-
-/* ===== PHONE CONTAINER ===== */
 .container {
-    width: 100%;
-    max-width: 430px;
-
-    min-height: 100vh;
-
-    margin: auto;
-    padding: 25px;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    text-align: center;
-}
-
-/* ===== TITLES ===== */
-.title {
-    font-size: 1rem;
-    line-height: 1.8;
-
-    margin-bottom: 20px;
-
-    color: #FFF;
-
-    text-shadow:
-        0 0 5px #ff66c4,
-        0 0 10px #ff66c4;
-}
-
-h3 {
-    font-size: 0.65rem;
-    line-height: 1.8;
-
-    margin-bottom: 35px;
-
-    color: #ffe066;
-}
-
-/* ===== HIDE CHECKBOXES ===== */
-input[type=checkbox] {
-    display: none;
-}
-
-/* ===== BOOK ===== */
-.book {
-    position: relative;
-
-    width: 260px;
-    height: 360px;
-
-    margin-left: 120px;
-
-    perspective: 1800px;
-    transform-style: preserve-3d;
-}
-
-/* ===== PAGE CONTAINER ===== */
-.book .pages,
-.book .pages > div {
-    position: absolute;
-
-    top: 0;
-    left: 0;
-
-    transform-style: preserve-3d;
-}
-
-/* ===== PAGES WRAPPER ===== */
-.book .pages {
     width: 100%;
-    height: 98%;
-
-    top: 1%;
-    left: 3%;
-
+    height: 100vh;
     z-index: 10;
 }
 
-/* ===== PAGE STYLE ===== */
-.book .pages > div {
+.title {
+    font-size: 1rem;
+    color: white;
+    text-shadow: 0 0 10px #ff66c4;
+    margin-bottom: 5px;
+}
+
+h3 {
+    font-size: 0.8rem;
+    color: #7ce3ff;
+    text-shadow: 0 0 10px  white;
+    margin-bottom: 5px;
+}
+
+input { 
+    display: none; 
+}
+
+/* THE BOOK */
+.book {
+    width: 300px;
+    height: 400px;
+    position: relative;
+    perspective: 1500px;
+
+    /* FIX: keeps book visually centered during flips */
+    transform-style: preserve-3d;
+}
+
+.pages {
     width: 100%;
     height: 100%;
-
-    transform-origin: left center;
-
-    transition-property: transform, box-shadow;
-    transition-duration: 1s;
-    transition-timing-function: ease;
-
-    background:
-        linear-gradient(
-            to right,
-            #ece4d8 0%,
-            #fffdf8 100%
-        );
-
-    border-radius: 0 12px 12px 0;
-
-    border-left: 4px solid #d3b88c;
-
-    box-shadow:
-        inset 0px -1px 2px rgba(50,50,50,0.1),
-        inset -1px 0px 1px rgba(150,150,150,0.2),
-        0 0 15px rgba(255,102,196,0.15);
-
-    overflow: hidden;
-}
-
-/* ===== PAGE GLOW ===== */
-.book .pages > div:hover {
-    box-shadow:
-        inset 1px 0px 2px rgba(50,50,50,0.1),
-        inset -3px 1px 1px rgba(150,150,150,0.2),
-        0 0 25px rgba(255,102,196,0.4);
-}
-
-/* ===== PAPER LINES ===== */
-.book .pages > div::before {
-    content: "";
-
-    position: absolute;
-    inset: 0;
-
-    background:
-        repeating-linear-gradient(
-            transparent,
-            transparent 26px,
-            rgba(0,0,0,0.04) 27px
-        );
-}
-
-/* ===== PAGE CONTENT ===== */
-.pageContent {
     position: relative;
+    transform-style: preserve-3d;
 
-    z-index: 5;
-
-    padding: 25px;
-
-    text-align: left;
-
-    color: #333;
-
-    font-size: 0.5rem;
-    line-height: 2;
+    /* FIX: stabilizes center during rotation */
+    transform-origin: center;
 }
 
-.pageContent h2 {
-    color: #ff66c4;
-
-    font-size: 0.7rem;
-
-    margin-bottom: 25px;
-
-    text-align: center;
-}
-
-.pageContent p {
-    margin-bottom: 20px;
-}
-
-/* ===== CLICK AREA ===== */
-.book .pages > div label {
+.page {
     position: absolute;
-
-    inset: 0;
-
-    cursor: pointer;
-
-    z-index: 20;
-}
-
-/* ===== PAGE STACKING ===== */
-#page1 ~ .pages div.page1 {
-    transform: rotateY(-34deg);
-    z-index: 4;
-}
-
-#page1:checked ~ .pages div.page1 {
-    transform: rotateY(-140deg);
-}
-
-#page2 ~ .pages div.page2 {
-    transform: rotateY(-32deg);
-    z-index: 3;
-}
-
-#page2:checked ~ .pages div.page2 {
-    transform: rotateY(-140deg);
-}
-
-#page3 ~ .pages div.page3 {
-    transform: rotateY(-30deg);
-    z-index: 2;
-}
-
-#page3:checked ~ .pages div.page3 {
-    transform: rotateY(-140deg);
-}
-
-#page4 ~ .pages div.page4 {
-    transform: rotateY(-28deg);
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-origin: left;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.645, 0.045, 0.355, 1);
     z-index: 1;
 }
 
-#page4:checked ~ .pages div.page4 {
-    transform: rotateY(-140deg);
+/* Base side styling */
+.side {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    padding: 30px;
+    background: #fffdf8;
+    border-radius: 0 15px 15px 0;
+    box-shadow: inset 3px 0px 20px rgba(0,0,0,0.1);
 }
 
-/* ===== MOBILE ===== */
-@media (max-width: 480px) {
-
-    .book {
-        width: 220px;
-        height: 320px;
-
-        margin-left: 90px;
-    }
-
-    .title {
-        font-size: 0.8rem;
-    }
-
-    h3 {
-        font-size: 0.55rem;
-    }
-
-    .pageContent {
-        font-size: 0.45rem;
-        padding: 18px;
-    }
-
-    .pageContent h2 {
-        font-size: 0.6rem;
-    }
+.front {
+    z-index: 2;
+    border-left: 5px solid #d3b88c;
 }
+
+.back {
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f5f2eb;
+    border-radius: 15px 0 0 15px;
+    border-right: 5px solid #d3b88c;
+}
+
+/* Click areas */
+.next, .prev {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 5;
+}
+
+/* CONTENT */
+.pageContent {
+    font-size: 0.6rem;
+    line-height: 2;
+    color: #333;
+}
+
+.pageContent h2 {
+    font-size: 0.8rem;
+    color: #ff66c4;
+    margin-bottom: 20px;
+}
+
+/* -----------------------------------------------------------
+   STACKING & FLIPPING LOGIC
+----------------------------------------------------------- */
+
+/* Initial Z-Index */
+#p1 { z-index: 11; }
+#p2 { z-index: 10; }
+#p3 { z-index: 9; }
+#p4 { z-index: 8; }
+#p5 { z-index: 7; }
+#p6 { z-index: 6; }
+#p7 { z-index: 5; }
+#p8 { z-index: 4; }
+#p9 { z-index: 3; }
+#p10 { z-index: 2; }
+#p11 { z-index: 1; }
+
+/* Flip Animation */
+#page1:checked ~ .pages #p1,
+
+#page2:checked ~ .pages #p1,
+#page2:checked ~ .pages #p2,
+
+#page3:checked ~ .pages #p1,
+#page3:checked ~ .pages #p2,
+#page3:checked ~ .pages #p3,
+
+#page4:checked ~ .pages #p1,
+#page4:checked ~ .pages #p2,
+#page4:checked ~ .pages #p3,
+#page4:checked ~ .pages #p4,
+
+#page5:checked ~ .pages #p1,
+#page5:checked ~ .pages #p2,
+#page5:checked ~ .pages #p3,
+#page5:checked ~ .pages #p4,
+#page5:checked ~ .pages #p5,
+
+#page6:checked ~ .pages #p1,
+#page6:checked ~ .pages #p2,
+#page6:checked ~ .pages #p3,
+#page6:checked ~ .pages #p4,
+#page6:checked ~ .pages #p5,
+#page6:checked ~ .pages #p6,
+
+#page7:checked ~ .pages #p1,
+#page7:checked ~ .pages #p2,
+#page7:checked ~ .pages #p3,
+#page7:checked ~ .pages #p4,
+#page7:checked ~ .pages #p5,
+#page7:checked ~ .pages #p6,
+#page7:checked ~ .pages #p7,
+
+#page8:checked ~ .pages #p1,
+#page8:checked ~ .pages #p2,
+#page8:checked ~ .pages #p3,
+#page8:checked ~ .pages #p4,
+#page8:checked ~ .pages #p5,
+#page8:checked ~ .pages #p6,
+#page8:checked ~ .pages #p7,
+#page8:checked ~ .pages #p8,
+
+#page9:checked ~ .pages #p1,
+#page9:checked ~ .pages #p2,
+#page9:checked ~ .pages #p3,
+#page9:checked ~ .pages #p4,
+#page9:checked ~ .pages #p5,
+#page9:checked ~ .pages #p6,
+#page9:checked ~ .pages #p7,
+#page9:checked ~ .pages #p8,
+#page9:checked ~ .pages #p9,
+
+#page10:checked ~ .pages #p1,
+#page10:checked ~ .pages #p2,
+#page10:checked ~ .pages #p3,
+#page10:checked ~ .pages #p4,
+#page10:checked ~ .pages #p5,
+#page10:checked ~ .pages #p6,
+#page10:checked ~ .pages #p7,
+#page10:checked ~ .pages #p8,
+#page10:checked ~ .pages #p9,
+#page10:checked ~ .pages #p10,
+
+#page11:checked ~ .pages #p1,
+#page11:checked ~ .pages #p2,
+#page11:checked ~ .pages #p3,
+#page11:checked ~ .pages #p4,
+#page11:checked ~ .pages #p5,
+#page11:checked ~ .pages #p6,
+#page11:checked ~ .pages #p7,
+#page11:checked ~ .pages #p8,
+#page11:checked ~ .pages #p9,
+#page11:checked ~ .pages #p10,
+#page11:checked ~ .pages #p11
+{
+    transform: rotateY(-160deg);
+}
+
+/* Dynamic Z-Index */
+#page1:checked ~ .pages #p1 { z-index: 12; }
+#page2:checked ~ .pages #p2 { z-index: 13; }
+#page3:checked ~ .pages #p3 { z-index: 14; }
+#page4:checked ~ .pages #p4 { z-index: 15; }
+#page5:checked ~ .pages #p5 { z-index: 16; }
+#page6:checked ~ .pages #p6 { z-index: 17; }
+#page7:checked ~ .pages #p7 { z-index: 18; }
+#page8:checked ~ .pages #p8 { z-index: 19; }
+#page9:checked ~ .pages #p9 { z-index: 20; }
+#page10:checked ~ .pages #p10 { z-index: 21; }
+#page11:checked ~ .pages #p11 { z-index: 22; }

@@ -2,112 +2,238 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-
-    <!-- mobile scaling -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Retro Flip Book</title>
-
     <link rel="stylesheet" href="book.css">
 </head>
-
 <body>
 
     <div class="container">
-
         <h1 class="title">A Little Book For You 💖</h1>
-        <h3>Tap the pages to flip them ✨</h3>
+        <div class="instructions">
+            <h3>Tap right to flip forward ✨</h3>
+            <h3>Tap left to go back 💫</h3>
+        </div>
 
         <div class="book">
-
-            <!-- hidden checkboxes -->
-            <input type="checkbox" id="page1">
-            <input type="checkbox" id="page2">
-            <input type="checkbox" id="page3">
-            <input type="checkbox" id="page4">
+            <!-- These control the state of the book -->
+            <input type="radio" name="book" id="page0" checked>
+            <input type="radio" name="book" id="page1">
+            <input type="radio" name="book" id="page2">
+            <input type="radio" name="book" id="page3">
+            <input type="radio" name="book" id="page4">
+            <input type="radio" name="book" id="page5">
+            <input type="radio" name="book" id="page6">
+            <input type="radio" name="book" id="page7">
+            <input type="radio" name="book" id="page8">
+            <input type="radio" name="book" id="page9">
+            <input type="radio" name="book" id="page10">
+            <input type="radio" name="book" id="page11">
 
             <div class="pages">
 
                 <!-- PAGE 1 -->
-                <div class="page1">
-                    <div class="pageContent">
-                        <h2>Hi Aubrey 💕</h2>
-
-                        <p>
-                            I made this little book because I wanted
-                            to make something special for you.
-                        </p>
-
-                        <p>
-                            Something dumb. Something cute.
-                            Something that feels very “us”.
-                        </p>
+                <div class="page" id="p1">
+                    <div class="side front">
+                        <div class="pageContent">
+                            <h2>Hey Aubs 💕</h2>
+                            <p>
+                            As we go through life together, having you as my partner makes everything better. 
+                            Knowing I always get to come back to you, be comforted by you, and share every moment with you means so much to me. I still can’t 
+                            believe how lucky I am to hold you, love you, and spend my time with you.
+                            </p>
+                        
+                               
+                        </div>
+                        <label class="next" for="page1"></label>
                     </div>
-
-                    <label for="page1"></label>
+                    <div class="side back">
+                        <label class="prev" for="page0"></label>
+                    </div>
                 </div>
 
                 <!-- PAGE 2 -->
-                <div class="page2">
-                    <div class="pageContent">
-                        <h2>Thank You 🌸</h2>
-
-                        <p>
-                            Thank you for every late night,
-                            every laugh, every adventure,
-                            and every tiny moment.
-                        </p>
-
-                        <p>
-                            Even the smallest things become
-                            memories when they’re with you.
-                        </p>
+                <div class="page" id="p2">
+                    <div class="side front">
+                        <div class="pageContent">
+                            <h2>Thank You 🌸</h2>
+                            <p>
+                                Thank you for loving me the way you do. Thank you for your patience, your care, 
+                                and the way you make even ordinary moments feel special. I appreciate you more than 
+                                I can ever fully say, and I am so grateful to have you in my life. 
+                                You’ve become one of the best parts of my world, and I wouldn’t trade this for anything.
+                            </p>
+                        </div>
+                        <label class="next" for="page2"></label>
                     </div>
-
-                    <label for="page2"></label>
+                    <div class="side back">
+                        <label class="prev" for="page1"></label>
+                    </div>
                 </div>
 
                 <!-- PAGE 3 -->
-                <div class="page3">
-                    <div class="pageContent">
-                        <h2>My Favorite Person 🎮</h2>
-
-                        <p>
-                            Whether we’re playing games,
-                            going out, or just talking,
-                            you somehow make everything better.
-                        </p>
-
-                        <p>
-                            I genuinely feel happiest
-                            when I’m with you.
-                        </p>
+                <div class="page" id="p3">
+                    <div class="side front">
+                        <div class="pageContent">
+                            <h2>My Favourite 💞</h2>
+                            <p>
+                                My favourite place is wherever I am with you. My favourite moments are the ones we share, 
+                                even when we are doing nothing at all. My favourite feeling is knowing I get to love 
+                                you and be loved by you. Even after late night shifts where we are both sleep deprived and exhausted.
+                            </p>
+                        </div>
+                        <label class="next" for="page3"></label>
                     </div>
-
-                    <label for="page3"></label>
+                    <div class="side back">
+                        <label class="prev" for="page2"></label>
+                    </div>
                 </div>
 
                 <!-- PAGE 4 -->
-                <div class="page4">
-                    <div class="pageContent">
-                        <h2>The End? 👀</h2>
-
-                        <p>
-                            Actually no.
-                        </p>
-
-                        <p>
-                            This is just the beginning
-                            of a lot more memories together 💖
-                        </p>
+                <div class="page" id="p4">
+                    <div class="side front">
+                        <div class="pageContent">
+                            <h2> My Safe Place ❤️‍🩹</h2>
+                            <p> Remember, when you're with me, no need to "go go go". You are my safe place in a world that often feels loud and uncertain; 
+                                with you, I feel calm, understood, and at home no matter where we are. 
+                                You bring a quiet that settles everything in me, turning even the chaos into something
+                                soft and manageable.</p>
+                        </div>
+                        <label class="next" for="page4"></label>
                     </div>
-
-                    <label for="page4"></label>
+                    <div class="side back">
+                        <label class="prev" for="page3"></label>
+                    </div>
                 </div>
+
+                <!-- PAGE 5 -->
+                <div class="page" id="p5">
+                    <div class="side front">
+                        <div class="pageContent">
+                            <h2>My Baby 💕</h2>
+                            <p>
+                                Let me take care of you. Let me be the one you can lean on and feel safe with. 
+                                There’s no need to worry or feel pressured; it can just be you and me, spending time together while I take care of you, 
+                                making sure you feel calm, valued, and at ease every moment we share. For the rest of forever.
+                            </p>
+                        </div>
+                        <label class="next" for="page5"></label>
+                    </div>
+                    <div class="side back">
+                        <label class="prev" for="page4"></label>
+                    </div>
+                </div>
+                <!-- PAGE 6 -->
+                <div class="page" id="p6">
+                    <div class="side front">
+                        <div class="pageContent">
+                            <h2>Little Things I Love ✨</h2>
+                            <p>
+                                I love the way you smile, the way you talk, and the way you make everything feel lighter.
+                                It’s always the little things about you that mean the most to me; like your dimple when you smile whenever you see me after work. 
+                                Those small moments are what stay with me the most. I love you, Aubs.
+                            </p>
+                        </div>
+                        <label class="next" for="page6"></label>
+                    </div>
+                    <div class="side back">
+                        <label class="prev" for="page5"></label>
+                    </div>
+                </div>
+                <!-- PAGE 7 -->
+                <div class="page" id="p7">
+                    <div class="side front">
+                        <div class="pageContent">
+                            <h2>When I Think of You 🌙</h2>
+                            <p>
+                                You are my inspiration. Whenever I think of you, you make me want to be better in every way. Even in my everyday life; 
+                                my attitude, my mindset, and the way I carry out my my duty. 
+                                You push me to grow and improve. You inspire me to become a better version of myself, simply by being who you are.
+                            </p>
+                        </div>
+                        <label class="next" for="page7"></label>
+                    </div>
+                    <div class="side back">
+                        <label class="prev" for="page6"></label>
+                    </div>
+                </div>
+                <!-- PAGE 8 -->
+                <div class="page" id="p8">
+                    <div class="side front">
+                        <div class="pageContent">
+                            <h2>Always You 💗</h2>
+                            <p>
+                                No matter where life takes me, it always feels like it leads me back to you. You are the constant I never want to lose; 
+                                the one thing that stays steady no matter how much everything else changes. With you, it feels like
+                                 I’ve found something I can always come home to, no matter where I am or what happens along the way.
+                            </p>
+                        </div>
+                        <label class="next" for="page8"></label>
+                    </div>
+                    <div class="side back">
+                        <label class="prev" for="page7"></label>
+                    </div>
+                </div>
+                <!-- PAGE 9 -->
+                <div class="page" id="p9">
+                    <div class="side front">
+                        <div class="pageContent">
+                            <h2>Hold My Hand 🤝</h2>
+                            <p>
+                                Hold my hand through the highs and the lows, and I’ll hold yours through everything too. 
+                                As long as we stay together, I know we’ll be okay. And please, especially during drives, don’t ever let go of my hand. 
+                                I love that feeling of you there, steady and close, like nothing in the world could go wrong in that moment.
+                            </p>
+                        </div>
+                        <label class="next" for="page9"></label>
+                    </div>
+                    <div class="side back">
+                        <label class="prev" for="page8"></label>
+                    </div>
+                </div>
+                <!-- PAGE 10 -->
+                <div class="page" id="p10">
+                    <div class="side front">
+                        <div class="pageContent">
+                            <h2>Together 💞</h2>
+                            <p>
+                                Let me be with you through everything life brings. I don’t just want the good moments. I want all of it, the easy days and the hard ones too, as long as it’s with you.
+                                 Now that I’m your boyfriend, I want to show up for you; to be there 
+                                 consistently, to care for you, and to build something real with you through everything we go through together.
+                            </p>
+                        </div>
+                        <label class="next" for="page10"></label>
+                    </div>
+                    <div class="side back">
+                        <label class="prev" for="page9"></label>
+                    </div>
+                </div>
+                <!-- PAGE 11 -->
+                <div class="page" id="p11">
+                    <div class="side front">
+                        <div class="pageContent">
+                            <h2>💘💝💖💗💓💞💕❣❤️‍🔥❤🩷🧡💚💙</h2>
+                            <br> <br> <br><br> <br>
+                            <p>
+                                I LOVE YOU, AUBS. SO, SO MUCH.
+                            </p>
+                            <br> <br> 
+                            <p>
+                                -CY
+                            </p>
+                            <br>
+                            <h2>💘💝💖💗💓💞💕❣❤️‍🔥❤🩷🧡💚💙</h2>
+                        </div>
+                        <label class="next" for="page11"></label>
+                    </div>
+                    <div class="side back">
+                        <label class="prev" for="page10"></label>
+                    </div>
+                </div>
+
 
             </div>
         </div>
-
     </div>
 
 </body>
